@@ -9,22 +9,26 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
   <script>
   (function () {
+    // 「デスクトップ版を見たい」というユーザーの希望フラグ
+    const preferDesktop = localStorage.getItem("preferDesktop") === "1";
+
     // ユーザーエージェントでスマホ判定
     const isMobileUA = /Android|iPhone|iPad|iPod|Windows Phone|webOS|BlackBerry/i.test(
       navigator.userAgent
     );
-    // 画面幅でも保険をかけておく
+    // 画面幅でも保険
     const isSmallScreen = window.matchMedia("(max-width: 768px)").matches;
 
-    // いまのページパス（ループ防止用）
     const path = location.pathname || "";
 
-    // 既に mobile.html にいるときは何もしない
+    // すでに mobile.html にいるときは何もしない
     if (path.includes("mobile.html")) return;
 
-    // スマホ or 小さい画面なら mobile.html に飛ばす
-    if (isMobileUA || isSmallScreen) {
-      // プロジェクトページなら ./mobile.html のほうが安全
+    // ▼ここがポイント
+    // ・デスクトップ希望フラグが「ない」
+    // ・スマホ or 画面が小さい
+    // → のときだけ mobile.html に飛ばす
+    if (!preferDesktop && (isMobileUA || isSmallScreen)) {
       location.href = "mobile.html";
     }
   })();
