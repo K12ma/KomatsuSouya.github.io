@@ -7,32 +7,6 @@
   <meta name="description" content="挑戦・学び・誠実さ・ポジティブシンキングを軸に生きる大学生 Souya Komatsu のポートフォリオ" />
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
-  <script>
-  (function () {
-    // 「デスクトップ版を見たい」というユーザーの希望フラグ
-    const preferDesktop = localStorage.getItem("preferDesktop") === "1";
-
-    // ユーザーエージェントでスマホ判定
-    const isMobileUA = /Android|iPhone|iPad|iPod|Windows Phone|webOS|BlackBerry/i.test(
-      navigator.userAgent
-    );
-    // 画面幅でも保険
-    const isSmallScreen = window.matchMedia("(max-width: 768px)").matches;
-
-    const path = location.pathname || "";
-
-    // すでに mobile.html にいるときは何もしない
-    if (path.includes("mobile.html")) return;
-
-    // ▼ここがポイント
-    // ・デスクトップ希望フラグが「ない」
-    // ・スマホ or 画面が小さい
-    // → のときだけ mobile.html に飛ばす
-    if (!preferDesktop && (isMobileUA || isSmallScreen)) {
-      location.href = "mobile.html";
-    }
-  })();
-</script>
 </head>
 <body>
   <div class="bg-orbit orbit-1"></div>
@@ -130,7 +104,7 @@
           </p>
           <p>
             東洋大学 理工学部 機械工学科で、<br>
-            物理・機械・数学（特に微分積分）が好きな理系学生です。
+            学生起業家として活躍したいと考えている理系学生です。
             同時に、Webやアプリ開発・ビジネスにも興味を持ち、
             <strong>「行動しながら学ぶ」</strong>スタイルで動いています。
           </p>
