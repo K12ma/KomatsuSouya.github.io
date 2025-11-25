@@ -23,3 +23,12 @@ if ("IntersectionObserver" in window) {
 } else {
   fadeTargets.forEach((el) => el.classList.add("visible"));
 }
+
+// 「デスクトップ版を開く」ボタンが押されたらフラグを立てる
+const desktopLink = document.querySelector("[data-desktop-link]");
+if (desktopLink) {
+  desktopLink.addEventListener("click", () => {
+    // デスクトップ版を優先するフラグ
+    localStorage.setItem("preferDesktop", "1");
+  });
+}
